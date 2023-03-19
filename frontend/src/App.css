@@ -1,0 +1,97 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 1s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.bg-light{
+  z-index: 1;
+  position:fixed;
+}
+.gg{
+  font-family: 'SourceSansPro-Bold',sans-serif;
+    font-size: 30px;
+    font-family: Fantasy;
+    color:#719735 ;
+    text-align: center;
+    position: relative;
+    padding-left: 1em;
+    padding-top: 2rem;
+    margin: auto;
+    margin-bottom: 15px;
+    
+    
+    width: 50%;
+    
+}
+.con{
+  display: flex;
+}
+.flexible{
+  flex: 1;
+  width: 50%;
+  padding-right:5rem ;
+  padding-left:5rem ;
+}
+.flexible1{
+  flex: 1;
+  width: 50%;
+}
+.buttona{
+  margin-left: 11rem;
+  margin-top: 3rem;
+  color: #61a04cb8;
+  border: #719735;
+}
+.image{
+ background-image: url('./project-filter-bg-home-v1.jpg');
+}
+.back{
+  background-color: #4f623223;
+  
+}
+.back2{
+  background-color: #b5c99537;
+  color: black;
+}
+.he{
+  color: blueviolet;
+  background-color: #61dafb;
+}
+
+
+  
+
+
