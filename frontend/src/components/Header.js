@@ -27,8 +27,8 @@ function OffcanvasExample() {
      onMouseLeave={(e) => e.target.style.color = 'white'}>New Book Releases</Nav.Link>
               <Nav.Link href="https://ueuromed.org/contact"  style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
      onMouseLeave={(e) => e.target.style.color = 'white'}>UEMF World</Nav.Link>
-              <Nav.Link href="/SignIn"   style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
-     onMouseLeave={(e) => e.target.style.color = 'white'}> <FontAwesomeIcon icon={faUser} /> Login/Register</Nav.Link>
+              <Nav.Link ><Link to={`/SignIn`}    style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
+     onMouseLeave={(e) => e.target.style.color = 'white'}> <FontAwesomeIcon icon={faUser} /> Login/Register  </Link></Nav.Link>
            
               
              
