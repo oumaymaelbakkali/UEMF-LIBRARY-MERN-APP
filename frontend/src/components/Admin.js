@@ -32,8 +32,8 @@ const Admin = () => {
        <Nav className="justify-content-end flex-grow-1 pe-3" >
          <Nav.Link href="/"  style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
 onMouseLeave={(e) => e.target.style.color = 'white'}>Home</Nav.Link>
-         <Nav.Link href="/Admin"  style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
-onMouseLeave={(e) => e.target.style.color = 'white'}>Admin</Nav.Link>
+          <Nav.Link ><Link to={`/Admin`}    style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
+     onMouseLeave={(e) => e.target.style.color = 'white'}> Admin  </Link></Nav.Link>
          <Nav.Link href="https://ueuromed.org/contact"  style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
 onMouseLeave={(e) => e.target.style.color = 'white'}>UEMF World</Nav.Link>
    <Nav.Link href="/SignIn"   style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
