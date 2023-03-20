@@ -253,6 +253,8 @@ app.post("/CreateAccount", ((req, res) => {
           email: req.body.email,
           password: req.body.password
         });
+        User1.save()
+      console.log('saved')
         function generateToken() {
           // Generate a random string of letters and numbers
          const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -301,25 +303,26 @@ app.post("/CreateAccount", ((req, res) => {
           }
       
       // Set the emailConfirmed field to true when the user clicks the confirmation link
-      app.get('http://localhost:3000/confirm/:token', (req, res) => {
-        
+     
+           
+          app.get('http://localhost:3000/confirm/:token', (req, res) => {
         // Find the user with the matching token
         if (req.params.token==confirmationToken){
           console.log("user enregistrer")
-          User1.save((err) => {
-            if (err) {
-              console.error(err);
-              
-              return;
-            }
-            res.send({"OK":"True"})
-           
-           
+          
+            .then(() => {
+              res.send({"OK":"True"})
+            })
+            .catch(error => {
+              console.error(error);
+            });
+        }
+      });  
             
             
             
             
-          });
+     
          
          
         }
