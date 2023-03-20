@@ -511,17 +511,21 @@ app.post('/Search', (req, res) => {
     return searchResults;
   }
 
-  user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
-    if (err) {
-      console.error(err);
-      res.send('Error finding admin');
-      return;
-    }
+  user.findOne({ _id: '63aae65af9d5c02039a9f86f' })
+  .then((admin) => {
     const searchResults = searchBooks(admin.books);
    
-     console.log('oumayma')
-    res.send({"ok":"True"})
-  });
+    console.log('oumayma')
+   res.send({"ok":"True"})
+ })
+ .catch((err) =>{
+  console.error(err);
+  res.send('Error finding admin');
+  return;
+ })
+  
+    
+   
 });
 
 
