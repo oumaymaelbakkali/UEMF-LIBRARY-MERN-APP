@@ -37,11 +37,12 @@ onMouseLeave={(e) => e.target.style.color = 'white'}>Home</Nav.Link>
 onMouseLeave={(e) => e.target.style.color = 'white'}>New Book Releases</Nav.Link>
          <Nav.Link href="https://ueuromed.org/contact"  style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
 onMouseLeave={(e) => e.target.style.color = 'white'}>UEMF World</Nav.Link>
-      <Nav.Link href={ `/MyList/${name}`}   style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
-onMouseLeave={(e) => e.target.style.color = 'white'}>MyList</Nav.Link>
-         <Nav.Link href="/SignIn"   style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
-onMouseLeave={(e) => e.target.style.color = 'white'}> <FontAwesomeIcon icon={faSignOut} />SignOut</Nav.Link>
+     <Nav.Link ><Link to={`/MyList/${name}`}    style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
+     onMouseLeave={(e) => e.target.style.color = 'white'}> MyList  </Link></Nav.Link>
+      <Nav.Link ><Link to={`/SignIn`}    style={{ fontSize: '18px',fontFamily:'fantasy',color: 'white'}} onMouseEnter={(e) => e.target.style.color = 'rgb(142, 158, 61)'}
+     onMouseLeave={(e) => e.target.style.color = 'white'}><FontAwesomeIcon icon={faSignOut} /> SignOut </Link></Nav.Link>
       
+
          
         
        </Nav>
