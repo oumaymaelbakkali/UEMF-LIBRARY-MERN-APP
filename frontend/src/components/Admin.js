@@ -42,7 +42,7 @@ onMouseLeave={(e) => e.target.style.color = 'white'}> <FontAwesomeIcon icon={faS
          
         
        </Nav>
-     
+      
      </Offcanvas.Body>
    </Navbar.Offcanvas>
  </Container>
