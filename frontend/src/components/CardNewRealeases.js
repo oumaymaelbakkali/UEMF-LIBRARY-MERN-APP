@@ -38,7 +38,7 @@ function GridExample() {
         {books.map((book) => (
           
           <Col xs={12} lg='3' className='mb-3 text-center'>
-            <div className='card mx-auto' style={{ width: '15rem',height: '36rem' }}>
+            <div  >
             <Card >
               
               <Card.Img variant="top" src={'./img/'+ book.photo} />

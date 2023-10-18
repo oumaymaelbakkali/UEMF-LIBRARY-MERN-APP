@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Footer from './Footer'
 import Caarousel from './Carousel'
 import { Navbar, Nav, NavDropdown, Offcanvas, Form, Button,Container, Carousel } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -54,6 +55,7 @@ onMouseLeave={(e) => e.target.style.color = 'white'}> <FontAwesomeIcon icon={faS
   
     
     <CardBooksAdmin/>
+    
    </>
   )
 }

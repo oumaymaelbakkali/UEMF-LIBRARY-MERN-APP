@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.get('/', (req, res) => {
   
-    user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+    user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
       if (err) {
         console.error(err);
         res.send('Error finding admin');
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
         return new Date(b.Date) - new Date(a.Date);
       });
       
-      const recentBooks = sortedBooks.slice(0, 4);
+      const recentBooks = sortedBooks.slice(0,4 );
       
       res.json(recentBooks);
     });
@@ -37,7 +37,7 @@ app.post('/SignIn', (req, res) => {
     user.findOne({ username: username, password: password }, (err, User) => {
       if (User) {
         
-        user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+        user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
           if (err) {
             console.error(err);
             
@@ -63,7 +63,7 @@ app.post('/SignIn', (req, res) => {
     });
   });
 app.get('/Admin',(req,res)=>{
-    user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+    user.findOne({ _id:'650ae834cdf46577d2668c94' }, (err, admin) => {
       if (err) {
         console.error(err);
         res.send('Error finding admin');
@@ -92,7 +92,7 @@ app.post('/AddBook',(req,res)=>{
     };
     
   
-    const id ='63aae65af9d5c02039a9f86f'
+    const id ='650ae834cdf46577d2668c94'
     user.findOne({ _id:id }, (err, User) => {
       if (err) {
         console.error(err);
@@ -111,7 +111,7 @@ app.post('/AddBook',(req,res)=>{
           return res.status(500).send('Error saving user');
         }
         console.log('save')
-        user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+        user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
           if (err) {
             console.error(err);
             res.send('Error finding admin');
@@ -142,7 +142,7 @@ app.get('/DetailBookAdmin/:Title', (req, res) => {
   
   
   
-  user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+  user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
     if (err) {
       console.error(err);
       res.send('Error finding admin');
@@ -164,7 +164,7 @@ app.get('/DetailBookAdmin/:Title', (req, res) => {
 app.get('/Delete/:title', function(req, res) {
   console.log('hii')
   const bookTitle = req.params.title;
-  user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+  user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
     if (err) {
       console.error(err);
       console.log('hii1')
@@ -198,7 +198,7 @@ app.get('/Delete/:title', function(req, res) {
 });
 // update the book
 app.post('/Update/:title',function(req, res) {
-  user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+  user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
     if (err) {
       console.error(err);
       return;
@@ -309,10 +309,11 @@ app.post("/CreateAccount", ((req, res) => {
           User1.save((err) => {
             if (err) {
               console.error(err);
-              
+              console.log("Noo ")
               return;
             }
             res.send({"OK":"True"})
+            console.log("Okkk ")
            
            
             
@@ -342,7 +343,7 @@ app.post('/Reserve/:title', (req, res) => {
   user.findOne({ username: username, password: password }, (err, User) => {
   if(User){
     // Find the admin document with the id '63aae65af9d5c02039a9f86f'
-     user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+     user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
     if (err) {
       console.error(err);
       return;
@@ -362,7 +363,7 @@ var returnDate = currentDate.toLocaleDateString();
       book.returnLe=returnDate
 
       // Save the updated admin document to the database
-      user.updateOne({ _id: '63aae65af9d5c02039a9f86f' }, { $set: { books: admin.books ,reservepar:book.reservepar} },
+      user.updateOne({ _id: '650ae834cdf46577d2668c94' }, { $set: { books: admin.books ,reservepar:book.reservepar} },
         (err, result) => {
           if (err) {
             console.error(err);
@@ -439,7 +440,7 @@ app.get('/delete-reservation/:Name/:title', function(req, res) {
       });
     } 
      // Save the updated admin document to the database
-     user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+     user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
       if (err) {
         console.error(err);
         return;
@@ -450,7 +451,7 @@ app.get('/delete-reservation/:Name/:title', function(req, res) {
       if (book) {
         book.statut = 'non';
         book.reservepar='non';
-        user.updateOne({ _id: '63aae65af9d5c02039a9f86f' }, { $set: { books: admin.books ,reservepar:admin.reservepar} },
+        user.updateOne({ _id: '650ae834cdf46577d2668c94' }, { $set: { books: admin.books ,reservepar:admin.reservepar} },
         (err, result) => {
           if (err) {
             console.error(err);
@@ -485,7 +486,7 @@ app.get('/Search/:GENRE', (req, res) => {
     return searchResults;
   }
 
-  user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+  user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
     if (err) {
       console.error(err);
       res.send('Error finding admin');
@@ -511,7 +512,7 @@ app.post('/Search', (req, res) => {
     return searchResults;
   }
 
-  user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
+  user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
     if (err) {
       console.error(err);
       res.send('Error finding admin');

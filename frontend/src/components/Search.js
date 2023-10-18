@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import { Button } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
-import Img from './Img';
+
 import Container from 'react-bootstrap/Container';
 
 

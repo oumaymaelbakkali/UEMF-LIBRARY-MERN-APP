@@ -6,7 +6,12 @@ import axios from "axios"
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopyright } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook} from '@fortawesome/free-brands-svg-icons'
+import { faInstagram} from '@fortawesome/free-brands-svg-icons'
+import { faTwitter} from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 
 function GridExample() {
@@ -41,18 +46,16 @@ function GridExample() {
       
         {books.map((book) => (
           
-          <Col>
+          <Col >
             <div >
-            <Card  className='mt-5'>
+            <Card   className='mt-5'  style={{ height: '500px' }}>
             
-              <Card.Img variant="top" src={'/img/'+book.photo} className='img'/>
+              <Card.Img variant="top" style={{ objectFit: 'cover', maxHeight: '350px' }}   src={'/img/'+book.photo} className='img'/>
 
-              <Card.Body style={{ height:'80px' }} className='overflow-auto'>
-              {book.statut == 'reserved' ? <h6 style={{color:'RED'}} > This Book is Reserved to {book.reservepar}</h6> : null}
+              <Card.Body  className='overflow-auto' style={{ objectFit: 'cover' }}>
+              {book.statut == 'reserved' ? <h6 style={{color:'RED'}} >  Reserved By {book.reservepar}</h6> : null}
                 <Card.Title style={{ color: 'black' ,fontFamily:'fantasy' }}>{book.Title}</Card.Title>
-                <Card.Text style={{ color: 'black' }}>
-                  {book.Author}
-                </Card.Text>
+               
                 <Card.Text style={{ color: 'black' }}>
                   {book.Genre}
                 </Card.Text>
@@ -64,6 +67,22 @@ function GridExample() {
           </Col>
         ))}
       </Row>
+      <Card className="text-center back mt-5 " >
+      <Card.Header className='back2'><> <FontAwesomeIcon icon={faFacebook} /> <FontAwesomeIcon icon={faTwitter} /> <FontAwesomeIcon icon={faInstagram} /> <FontAwesomeIcon icon={faEnvelope} /></></Card.Header>
+      <Card.Body >
+        <Card.Title style={{fontFamily:'fantasy',color:'white'}}>TIMING</Card.Title>
+        <Card.Text style={{color:'white'}}>
+        Mon - Thu: 9 am - 6 pm
+Fri:    9 am - 3 pm
+        </Card.Text>
+        
+        <Card.Text style={{color:'white'}}>
+        the library is located in the basement level 3 (b3) of the ground floor (rez de chasse) building.
+        </Card.Text>
+        
+      </Card.Body>
+      <Card.Footer className="text-muted back2" style={{fontFamily:'fantasy',color:'white'}}><FontAwesomeIcon icon={faCopyright} />2023 Copyright</Card.Footer>
+    </Card>
       </Container>
       </div>
     </>
