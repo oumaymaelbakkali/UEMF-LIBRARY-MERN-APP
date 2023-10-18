@@ -25,12 +25,12 @@ app.get('/', (req, res) => {
         return new Date(b.Date) - new Date(a.Date);
       });
       
-      const recentBooks = sortedBooks.slice(0,4 );
+      const recentBooks = sortedBooks.slice(0,4);
       
       res.json(recentBooks);
     });
   });
-app.post('/SignIn', (req, res) => {
+app.post('/SignIn', (req, res) => { 
     const username = req.body.username;
     const password = req.body.password;
     
@@ -253,6 +253,8 @@ app.post("/CreateAccount", ((req, res) => {
           email: req.body.email,
           password: req.body.password
         });
+        User1.save()
+      console.log('saved')
         function generateToken() {
           // Generate a random string of letters and numbers
          const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -301,29 +303,29 @@ app.post("/CreateAccount", ((req, res) => {
           }
       
       // Set the emailConfirmed field to true when the user clicks the confirmation link
-      app.get('http://localhost:3000/confirm/:token', (req, res) => {
-        
+     
+           
+          app.get('http://localhost:3000/confirm/:token', (req, res) => {
         // Find the user with the matching token
         if (req.params.token==confirmationToken){
           console.log("user enregistrer")
           User1.save((err) => {
             if (err) {
               console.error(err);
-              console.log("Noo ")
+              
               return;
             }
             res.send({"OK":"True"})
-            console.log("Okkk ")
            
            
             
             
             
             
-          });
+     
          
          
-        }
+        })}
        
       });
       
@@ -331,7 +333,7 @@ app.post("/CreateAccount", ((req, res) => {
       
       
     }
-  });
+});
  
  
   
@@ -512,7 +514,7 @@ app.post('/Search', (req, res) => {
     return searchResults;
   }
 
-  user.findOne({ _id: '650ae834cdf46577d2668c94' }, (err, admin) => {
+  user.findOne({ _id: '63aae65af9d5c02039a9f86f' }, (err, admin) => {
     if (err) {
       console.error(err);
       res.send('Error finding admin');
@@ -520,9 +522,17 @@ app.post('/Search', (req, res) => {
     }
     const searchResults = searchBooks(admin.books);
    
-     console.log('oumayma')
-    res.send({"ok":"True"})
-  });
+    console.log('oumayma')
+   res.send({"ok":"True"})
+ })
+ .catch((err) =>{
+  console.error(err);
+  res.send('Error finding admin');
+  return;
+ })
+  
+    
+   
 });
 
 
